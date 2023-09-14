@@ -1,0 +1,64 @@
+{
+  "name": "sooos",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.tsx",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "watсh": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malcewdeveloper/sooos.git"
+  },
+  "keywords": [
+    "react",
+    "js",
+    "ts",
+    "material"
+  ],
+  "authors": [
+    {
+      "name": "Maxim Lukhovskiy",
+      "email": "malcewdeveloper@yandex.ru"
+    },
+    {
+      "name": "Vladislav Movchan",
+      "email": "desiiign@yandex.ru"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malcewdeveloper/sooos/issues"
+  },
+  "homepage": "https://github.com/malcewdeveloper/sooos#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.19",
+    "@babel/preset-env": "^7.22.15",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.22.15",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "babel-loader": "^9.1.3",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "svg-url-loader": "^8.0.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.16.0",
+    "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.2"
+  }
+}
