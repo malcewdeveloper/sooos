@@ -52,7 +52,10 @@ const theme = createTheme({
             'Proxima Nova, Semibold',
             'sans-serif'
         ].join(',')
-    }
+    },
+    shape: {
+        borderRadius: 12
+    },
 });
 
 export default theme;
