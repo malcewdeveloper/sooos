@@ -38,10 +38,9 @@ module.exports = {
                 type: 'asset/resource',
             },
             {
-                test: /\.svg$/,
-                use: {
-                    loader: 'svg-url-loader'
-                }
+                test: /\.svg$/i,
+                issuer: /\.[jt]sx?$/,
+                use: ['@svgr/webpack'],
             },
             {
                 test: /\.js$/,
