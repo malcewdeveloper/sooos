@@ -3,6 +3,11 @@ import { generateUtilityClass, generateUtilityClasses } from "@mui/material";
 
 interface IHeaderClasses {
     root: string;
+    positionAbsolute: string;
+    positionFixed: string;
+    positionSticky: string;
+    positionRelative: string;
+    positionStatic: string;
 }
 
 export function getHeaderClass(slot: string): string {
@@ -11,6 +16,11 @@ export function getHeaderClass(slot: string): string {
 
 const headerClasses: IHeaderClasses = generateUtilityClasses('Header', [
     'root',
+    'positionAbsolute',
+    'positionFixed',
+    'positionSticky',
+    'positionRelative',
+    'positionStatic'
 ], 'Header');
 
 export default headerClasses;
