@@ -75,7 +75,8 @@ const SideNavigation: React.FC<ISideNavigationProps> = (props) => {
     return (
         <SideNavigationRoot 
         as={ component }
-        className={ clsx(classes.root, className) }>
+        className={ clsx(classes.root, className) }
+        {...other}>
             <List header={
                 <Typography variant='body1' style={{ opacity: 0.4, marginBottom: '18px' }}>Навигация</Typography>
             }>
