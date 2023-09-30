@@ -9,7 +9,7 @@ import ReviewCardList from "../../modules/ReviewCardList";
 import Container from "../../UI/Container";
 import Box from "../../UI/Box";
 import { useMediaQuery } from "@mui/material";
-
+import { useTheme } from "@mui/material";
 
 const jsonSliderMenu = [
     {
@@ -188,6 +188,9 @@ const jsonContent = [
 
 
 const Home: React.FC = () => {
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up(768));
+
     return (
         <React.Fragment>
             <Header style={{ padding: '10px' }}>
@@ -201,9 +204,11 @@ const Home: React.FC = () => {
                 </Typography>
                 <SliderMenu items={ jsonSliderMenu } />
                 <Box style={{ display: 'flex', gap: '32px', marginTop: '100px', marginBottom: '100px' }}>
-                    <Box style={{ position: 'relative', flex: '0 0 33.67%' }}>
-                        <SideNavigation style={{ position: 'sticky', top: '5%' }} items={ jsonNavigation } />
-                    </Box>
+                    {isDesktop && 
+                        <Box style={{ position: 'relative', flex: '0 0 33.67%' }}>
+                            <SideNavigation style={{ position: 'sticky', top: '5%' }} items={ jsonNavigation } />
+                        </Box>
+                    }
                     <ReviewCardList data={ jsonContent } /> 
                 </Box>
             </Container>
