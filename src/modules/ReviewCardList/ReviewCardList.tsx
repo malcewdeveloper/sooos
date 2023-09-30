@@ -75,7 +75,8 @@ const ReviewCardList: React.FC<IReviewCardListProps> = (props) => {
                             icon={ <div style={{ fontSize: '52px' }}>Be</div> }
                             image={ content.imageUrl }
                             title={ content.name } 
-                            content={ content.description } />
+                            content={ content.description }
+                            style={{ flex: '0 0 calc(50% - 6px)' }} />
                         ))}
                     </ReviewCardListContent>
                 </Box>
