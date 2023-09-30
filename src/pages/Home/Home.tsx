@@ -6,6 +6,8 @@ import Typography from "../../UI/Typography";
 import SliderMenu from "../../components/SliderMenu";
 import SideNavigation from "../../components/SideNavigation/SideNavigation";
 import ReviewCardList from "../../modules/ReviewCardList";
+import Container from "../../UI/Container";
+import Box from "../../UI/Box";
 
 
 const jsonSliderMenu = [
@@ -186,24 +188,28 @@ const jsonContent = [
 
 const Home: React.FC = () => {
     return (
-        <div style={{ maxWidth: '1177px', marginLeft: 'auto', marginRight: 'auto' }}>
+        <React.Fragment>
             <Header style={{ padding: '10px' }}>
                 <AnimatedLogo />
             </Header>
-            <main>
+            <Container component='main'>
                 <Typography 
                 variant='h2' 
                 style={{ width: '465px', textAlign: 'center', marginTop: '166px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '80px' }}>
                     Полезные сервисы в одном месте
                 </Typography>
                 <SliderMenu items={ jsonSliderMenu } />
-                <div style={{ display: 'flex', gap: '32px', marginTop: '100px', marginBottom: '100px' }}>
-                    <SideNavigation style={{ alignSelf: 'flex-start' }} items={ jsonNavigation } />
-                    <ReviewCardList data={ jsonContent } />
-                </div>
-            </main>
+                <Box style={{ display: 'flex', gap: '32px', marginTop: '100px', marginBottom: '100px' }}>
+                    <Box style={{ position: 'relative', flex: '0 0 33.67%' }}>
+                        <SideNavigation style={{ position: 'sticky', top: '5%' }} items={ jsonNavigation } />
+                    </Box>
+                    <Box style={{ flex: '0 0 67.89%' }}>
+                        <ReviewCardList data={ jsonContent } /> 
+                    </Box>
+                </Box>
+            </Container>
             <Footer />
-        </div>
+        </React.Fragment>
     )
 }
 
