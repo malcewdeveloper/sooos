@@ -8,6 +8,7 @@ import SideNavigation from "../../components/SideNavigation/SideNavigation";
 import ReviewCardList from "../../modules/ReviewCardList";
 import Container from "../../UI/Container";
 import Box from "../../UI/Box";
+import { useMediaQuery } from "@mui/material";
 
 
 const jsonSliderMenu = [
@@ -203,9 +204,7 @@ const Home: React.FC = () => {
                     <Box style={{ position: 'relative', flex: '0 0 33.67%' }}>
                         <SideNavigation style={{ position: 'sticky', top: '5%' }} items={ jsonNavigation } />
                     </Box>
-                    <Box style={{ flex: '0 0 67.89%' }}>
-                        <ReviewCardList data={ jsonContent } /> 
-                    </Box>
+                    <ReviewCardList data={ jsonContent } /> 
                 </Box>
             </Container>
             <Footer />
