@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import ReviewCard from "../../components/ReviewCard";
 import Typography from "../../UI/Typography";
+import Box from "../../UI/Box";
 import { styled } from "@mui/material";
 import { unstable_composeClasses as composeClasses } from "@mui/material";
 import { getReviewCardListClass } from "./reviewCardListClasses";
@@ -65,7 +66,7 @@ const ReviewCardList: React.FC<IReviewCardListProps> = (props) => {
         className={ clsx(classes.root, className) }
         { ...other }>
             { data.map(item => (
-                <div>
+                <Box>
                     <Typography key={ item.id } style={{ fontSize: '32px', marginBottom: '32px' }}>{ item.category }</Typography>
                     <ReviewCardListContent>
                         {item.content.map(content => (
@@ -77,7 +78,7 @@ const ReviewCardList: React.FC<IReviewCardListProps> = (props) => {
                             content={ content.description } />
                         ))}
                     </ReviewCardListContent>
-                </div>
+                </Box>
             )) }
         </ReviewCardListRoot>
     )
