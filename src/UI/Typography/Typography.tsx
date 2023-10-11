@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { getTypographyClass } from './typographyClasses';
 import { styled } from "@mui/material";
 import { unstable_composeClasses as composeClasses } from "@mui/material";
+import { useMediaQuery } from '@mui/material';
 
 
 const useUtilityClasses = (ownerState) => {
@@ -29,6 +30,41 @@ interface ITypographyProps {
 const TypographyRoot = styled('span')<{ ownerState: ITypographyProps }>(({ theme, ownerState }) => ({
     margin: 0,
     ...(theme.typography[ownerState.variant]),
+    ...(useMediaQuery(theme.breakpoints.down(970)) && {
+        ...(ownerState.variant === 'h1' && {
+            fontSize: '3rem'
+        }),
+        ...(ownerState.variant === 'h2' && {
+            fontSize: '2.5rem'
+        }),
+        ...(ownerState.variant === 'h3' && {
+            fontSize: '1.75rem'
+        }),
+        ...(ownerState.variant === 'body1' && {
+            fontSize: '14px'
+        }),
+        ...(ownerState.variant === 'body2' && {
+            fontSize: '14px'
+        })
+    }),
+    ...(useMediaQuery(theme.breakpoints.down(444)) && {
+        ...(ownerState.variant === 'h1' && {
+            fontSize: '2rem'
+        }),
+        ...(ownerState.variant === 'h2' && {
+            fontSize: '1.75rem'
+        }),
+        ...(ownerState.variant === 'h3' && {
+            fontSize: '18px'
+        }),
+        ...(ownerState.variant === 'body1' && {
+            fontSize: '12px'
+        }),
+        ...(ownerState.variant === 'body2' && {
+            fontSize: '12px'
+        })
+    }),
+
 }));
 
 const defaultVariantMapping = {
