@@ -3,6 +3,8 @@ import clsx from "clsx";
 import ReviewCard from "../../components/ReviewCard";
 import Typography from "../../UI/Typography";
 import Box from "../../UI/Box";
+import Button from "../../UI/Button";
+import { useMediaQuery } from "@mui/material";
 import { styled } from "@mui/material";
 import { unstable_composeClasses as composeClasses } from "@mui/material";
 import { getReviewCardListClass } from "./reviewCardListClasses";
@@ -38,7 +40,10 @@ interface IReviewCardListProps {
 const ReviewCardListRoot = styled('div')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
-    gap: '36px'
+    gap: '36px',
+    ...(useMediaQuery(theme.breakpoints.up(768)) && {
+        flex: '0 0 calc(100% - 33.67% - 32px)'
+    })
 }));
 
 const ReviewCardListContent = styled('div')(({ theme }) => ({
