@@ -199,7 +199,7 @@ const Home: React.FC = () => {
             <Container component='main'>
                 <Typography 
                 variant='h2' 
-                style={{ width: '465px', textAlign: 'center', marginTop: '166px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '80px' }}>
+                style={{ maxWidth: '465px', width: '100%', textAlign: 'center', marginTop: '166px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '80px' }}>
                     Полезные сервисы в одном месте
                 </Typography>
                 <SliderMenu items={ jsonSliderMenu } />
