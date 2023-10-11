@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { styled } from "@mui/system";
 import buttonClasses, { getButtonClass } from "./buttonClasses";
 import { unstable_composeClasses as composeClasses } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 
 
 const useUtilityClasses = (ownerState) => {
@@ -75,8 +76,11 @@ const ButtonRoot = styled('button')<{ownerState: IButtonProps}>(({ theme, ownerS
     ...(ownerState.variant === 'text' && {
         backgroundColor: 'transparent',
         color: 'rgba(255, 255, 255, 0.4)',
-        fontSize: '24px',
+        fontSize: '18px',
         padding: 0,
+        ...(useMediaQuery(theme.breakpoints.up(970)) && {
+            fontSize: '24px',
+        }),
         '@media (hover: none)': {
             backgroundColor: 'transparent'
         }
@@ -85,11 +89,19 @@ const ButtonRoot = styled('button')<{ownerState: IButtonProps}>(({ theme, ownerS
         backgroundColor: '#151718',
         border: '1px solid #222527',
         color: '#FFFFFF',
-        fontSize: '32px',
+        fontSize: '24px',
+        padding: '8px 14px',
+        ...(useMediaQuery(theme.breakpoints.up(444)) && {
+            fontSize: '28px',
+            padding: '10px 20px',
+        }),
+        ...(useMediaQuery(theme.breakpoints.up(970)) && {
+            fontSize: '32px',
+            padding: '12px 24px',
+        }),
         '@media (hover: none)': {
             backgroundColor: 'transparent'
         }
-        
     }),
     ...(ownerState.fullWidth && {
         width: '100%'
