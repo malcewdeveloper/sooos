@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { styled } from "@mui/material";
 import { getListItemClass } from "./listItemClasses";
 import { unstable_composeClasses as composeClasses } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 
 
 const useUtilityClasses = (ownerState) => {
@@ -32,7 +33,12 @@ const ListItemRoot = styled('li')(({ theme }) => ({
     fontSize: '24px',
     '&:not(:last-child)': {
         marginBottom: '24px'
-    }
+    },
+    ...(useMediaQuery(theme.breakpoints.down(970)) && {
+        '&:not(:last-child)': {
+            marginBottom: '16px'
+        },
+    })
 }));
 
 const ListItem: React.FC<IListItemProps> = (props) => {
