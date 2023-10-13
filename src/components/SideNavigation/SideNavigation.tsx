@@ -1,12 +1,13 @@
 import React from "react";
 import clsx from "clsx";
 import Button from "../../UI/Button";
-import List, { ListItem } from "../../UI/List";
 import Paper from "../../UI/Paper";
 import Typography from "../../UI/Typography";
-import { styled } from '@mui/material';
+import List, { ListItem } from "../../UI/List";
 import  sideNavigationClasses, { getSideNavigationClass } from "./sideNavigationClasses";
+import { styled } from '@mui/material';
 import { unstable_composeClasses as composeClasses } from "@mui/material";
+import { useMediaQuery } from '@mui/material';
 
 
 const useUtilityClasses = (ownerState) => {
@@ -45,6 +46,10 @@ const SideNavigationBall = styled('span')(({ theme }) => ({
     height: '12px',
     backgroundColor: 'currentColor',
     borderRadius: '50%',
+    ...(useMediaQuery(theme.breakpoints.down(970)) && {
+        width: '10px',
+        height: '10px',
+    })
 }));
 
 const SideNavigationButton = styled(Button)(({ theme }) => ({
@@ -55,7 +60,17 @@ const SideNavigationButton = styled(Button)(({ theme }) => ({
     [`&.${sideNavigationClasses.buttonSelected} .${sideNavigationClasses.ball}`]: {
         width: '28px',
         height: '28px'
-    }
+    },
+    ...(useMediaQuery(theme.breakpoints.down(970)) && {
+        [`&:hover .${sideNavigationClasses.ball}`]: {
+            width: '18px',
+            height: '18px'
+        },
+        [`&.${sideNavigationClasses.buttonSelected} .${sideNavigationClasses.ball}`]: {
+            width: '22px',
+            height: '22px'
+        },
+    })
 }));
 
 const SideNavigation: React.FC<ISideNavigationProps> = (props) => {
